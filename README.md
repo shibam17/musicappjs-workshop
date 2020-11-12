@@ -46,6 +46,7 @@ Now create the required folders of ***images*** and ***music***.
 The set is almost done, their one last thing we have to add that is a small library of icons which we will be needing in our app button. Do not worry, I got you covered here too! Just click the link [here](https://cloud-gsfn58rnx.vercel.app/0icons.zip), the zip folder will download and unzip it, extract the icon folder then simple drag and drop in your project.
 
 ![Drag'n'Drop-procedure](https://cloud-1h4d9km9k.vercel.app/0ma_2.gif)
+
 ```
 Want to know more?
 -> The icons folder is a library which has every icons in a very small pakages, which makes it easy to use and easier to load.
@@ -115,7 +116,10 @@ Now that our skeleton is ready for the Music App, it is time to decorate it and 
 This is the most fun part because you can just make it look as you want. Add colors, hover effects and what not. 
 
 Well, I chose my app to look like this.
+<br>
+<br>
 <img src="https://cloud-pzx63pyr8.vercel.app/0mas_2.png" alt="project-after-css" >
+<br>
 <br>
  If you wan to do same styling as mine then just click [here](https://github.com/shibam17/musicappjs-workshop/blob/main/style.css) and get the code. :wink:
 
