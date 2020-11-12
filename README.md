@@ -44,6 +44,7 @@ Now create the required folders of ***images*** and ***music***.
 
 
 The set is almost done, their one last thing we have to add that is a small library of icons which we will be needing in our app button. Do not worry, I got you covered here too! Just click the link [here](https://cloud-gsfn58rnx.vercel.app/0icons.zip), the zip folder will download and unzip it, extract the icon folder then simple drag and drop in your project.
+
 ![Drag'n'Drop-procedure](https://cloud-1h4d9km9k.vercel.app/0ma_2.gif)
 ```
 Want to know more?
@@ -61,7 +62,9 @@ In here we will create the skeleton of our Music App. It will determine what all
 Finally linking our HTML file to the CSS file, the JavaScript file and not to forget, linking to the icon file inside the icon folder(To get the icons in action!)
 To do that you can simple link in the head of HTML file by putting
 
-`html  <link  rel="stylesheet"  href="./icons/css/all.min.css"  />`
+```html  
+<link  rel="stylesheet"  href="./icons/css/all.min.css"  />
+```
 
 In the HTML file everything is wrapped inside one another. 
 There are various classes and ids which has the small chunks of the elements to be displayed.
@@ -75,8 +78,10 @@ For example:
     
 Among the elements, there will be a separate `div` tag which will hold up the image along with a class name which will come in handy while dealing with it in JavaScript.
 
-    <div  id="song-image"  class="song-img"  style="background-image: url('./images/song-1.jpg');"></div>
-  There will many tags for each elements requires like for the name of song and artist, to hold up the buttons and also tags to wrap all the other elements. You can wish to think out of the box and add something more or change the arrangements. 
+```html  
+<div  id="song-image"  class="song-img"  style="background-image: url('./images/song-1.jpg');"></div>
+```
+There will many tags for each elements requires like for the name of song and artist, to hold up the buttons and also tags to wrap all the other elements. You can wish to think out of the box and add something more or change the arrangements. 
 **NOTE:** Now that we have linked the icons file, we can use play and pause button, the previous and next button easily by simply adding the their respective class names.
 
 A glimpse of the HTML file:
@@ -111,18 +116,22 @@ This is the most fun part because you can just make it look as you want. Add col
 
 Well, I chose my app to look like this.
 <img src="https://cloud-pzx63pyr8.vercel.app/0mas_2.png" alt="project-after-css" >
+<br>
  If you wan to do same styling as mine then just click [here](https://github.com/shibam17/musicappjs-workshop/blob/main/style.css) and get the code. :wink:
 
 ### JavaScript Part:
 Now it is time to work on the functioning part of this app. So lets get ready! :sunglasses:
 ![get-ready](https://media.giphy.com/media/C9xZ1G3RAinYlOfmHm/giphy.gif)
+<br>
 First thing is that we want all the functioning of the app just right away when the window/page gets load so everything we will code in JavaScript will be inside `window` object triggered with the `onload` event forming an anonymous function.
-```
+
+```javascript
 window.onload=()=>{}
 ```
 So inside this function, first select all the classes and ids from the HTML, to which we are going to make changes in a bit.
 For example:
-```
+
+```javascript
 const song_img_el = document.querySelector('#song-image');
 const song_title_el = document.querySelector('#song-title');
 
@@ -167,7 +176,13 @@ Want to know more?
 -> The EVENT is like a trigger which fires on the basis of actions. There can be any types of events like click, drag, scroll and many more. These events are added to an element with the help of an EVENT-LISTENERS.
 ```
 Glimpse of the code :wink:
-![code-of-the-function](https://cloud-ijhaedl8v.vercel.app/0mas_4.png)
+
+```javascript
+ play_btn.addEventListener('click', TogglePlaySong);
+ next_btn.addEventListener('click', () => ChangeSong());
+ prev_btn.addEventListener('click', () => ChangeSong(false));
+```
+
 
 #### Defining the functions
 Now that the database is ready and event-listeners are set, it is time to define the functions. 
@@ -177,7 +192,8 @@ The functions will help to:
 
 In this app I have used four functions to carry out the above functionalities.
 <1> The first function is to play the song. Here the index of current song plus the next song will be collected and the ```UpdatePlayer```function will be called.
-```
+
+```javascript
 function  InitPlayer () {
 	current_song_index = 0;
 	next_song_index = current_song_index + 1;
@@ -189,7 +205,8 @@ This function will have a parameter of boolean value, which will see that if it 
 Along with this, it will also have a **conditional rendering** which will keep a track of the index number values, so that it will go on and on in a loop when the value exceeds or lesser than the possible index number of the database object.
 
 At last it will also call the ```UpdatePlayer```functions.
-```
+
+```javascript
 
 if (current_song_index > songs.length - 1) {
 	current_song_index = 0;
@@ -200,16 +217,58 @@ In the above code you can see that there is conditions which states that just in
 Work on it and perform the basic idea to keep the music app in loops.
 
 Glimpse of the code:wink:
-![code-of-the-function](https://cloud-4fpearu87.vercel.app/0mas_5.png)
+
+```javascript
+function ChangeSong (next = true) {
+        if (next) {
+            current_song_index++;
+            next_song_index = current_song_index + 1;
+
+            if (current_song_index > songs.length - 1) {
+                current_song_index = 0;
+                next_song_index = current_song_index+1;
+            }
+
+            if (next_song_index > songs.length - 1) {
+                next_song_index = 0;
+            }
+        } else {
+            current_song_index--;
+            next_song_index = current_song_index + 1;
+
+            if (current_song_index < 0) {
+                current_song_index = songs.length - 1;
+                next_song_index = 0;
+            }
+        }
+
+        UpdatePlayer();
+        TogglePlaySong();
+    }
+```
 
 <3> The third function will help to toggle between the play and pause button. This will make sure to change the button when the music plays or stops. This will be done by adding and removing class fro the HTML file with the help of JavaScript. 
 To add and remove class we can simple use ```element_name.classList.add('name_of_class')``` and ```element_name.classList.remove('name_of_class')```respectively.
 
 One more thing about this is that, we have to write the code in a vice-versa condition. Which means that if there is a play button then on click it will change to pause button and if it is a pause button, on click it will change to play button.
-![code-of-the-function](https://cloud-h1zjtzln2.vercel.app/0mas_6.png)
+
+```javascript
+function TogglePlaySong () {
+        if (audio_player.paused) {
+            audio_player.play();
+            play_btn_icon.classList.remove('fa-play')
+            play_btn_icon.classList.add('fa-pause');
+        } else {
+            audio_player.pause();
+            play_btn_icon.classList.add('fa-play')
+            play_btn_icon.classList.remove('fa-pause');
+        }
+    }
+```
 
 <4> The fourth and last function which is the ```UpdatePlayer```function. This has a very crucial role in our app since its main job is to put up the current song name, image and details to our page and also to play the song too!.
-```
+
+```javascript
 function  UpdatePlayer() {
 	let song = songs[current_song_index];
 	song_img_el.style = "background-image: url('" + song.img_path + "');";
