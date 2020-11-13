@@ -35,6 +35,7 @@ Since it is a web-app, we need to setup 3 things:
 but as we are making a music app and we want to make it beautiful, we will need some folders: 🤔
 * Images
 * Music
+
 At last be ready with your favorite songs and their album cover images.   :wink:
 
 **Initial Setup**
