@@ -1,4 +1,4 @@
----	---
+---
 name: 'Music App with JavaScript'
 description: 'Create a cool Music App with Vanilla JavaScript with all your favorite songs.'
 author: '@shibam17'
