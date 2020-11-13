@@ -1,8 +1,8 @@
----
+---	---
 name: 'Music App with JavaScript'
-description: 'Yahan 1 line ka description de dejiye'
-author: '@(apna username)'
-img: Yahan par link daal dejiye thumbnail ki #cdn mai paste karke
+description: 'Create a cool Music App with Vanilla JavaScript with all your favorite songs.'
+author: '@shibam17'
+img: https://cloud-5v67fzk5g.vercel.app/0thumb.png
 ---
 
 Ever wondered to build something which would be fun and for your own along with learning the domain, all of it at once? Well if yes, then you can create your own **Music App** just with JavaScript. Which will not only be fun and creative but also will help to understand term and function in detailed practical manner! :smile: :yum:
