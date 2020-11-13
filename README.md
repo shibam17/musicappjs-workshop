@@ -1,11 +1,9 @@
 ---
-name: 'Naam daal dejiye apne workshop ka'
+name: 'Music App with JavaScript'
 description: 'Yahan 1 line ka description de dejiye'
 author: '@(apna username)'
 img: Yahan par link daal dejiye thumbnail ki #cdn mai paste karke
 ---
-
-# Music App with JavaScript
 
 Ever wondered to build something which would be fun and for your own along with learning the domain, all of it at once? Well if yes, then you can create your own **Music App** just with JavaScript. Which will not only be fun and creative but also will help to understand term and function in detailed practical manner! :smile: :yum:
 <p align='center'>
