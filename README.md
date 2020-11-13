@@ -1,8 +1,8 @@
 ---
 name: 'Music App with JavaScript'
-description: 'Create a cool Music App with Vanilla JavaScript with all your favorite songs.'
-author: '@shibam17'
-img: https://cloud-5v67fzk5g.vercel.app/0thumb.png
+description: 'Yahan 1 line ka description de dejiye'
+author: '@(apna username)'
+img: Yahan par link daal dejiye thumbnail ki #cdn mai paste karke
 ---
 
 Ever wondered to build something which would be fun and for your own along with learning the domain, all of it at once? Well if yes, then you can create your own **Music App** just with JavaScript. Which will not only be fun and creative but also will help to understand term and function in detailed practical manner! :smile: :yum:
@@ -28,20 +28,21 @@ The best part is, it will take just around 20 mins to complete this! :relieved:
 ## Create files and folders
 Since it is a web-app, we need to setup 3 things:
 
- 1. HTML file
- 2. CSS file
- 3. JavaScript file
+ 1. The HTML file
+ 2. The CSS file
+ 3. The JavaScript file
 
-but as we are making a music app and we want to make it beautiful, we will need some folders 🤔
+but as we are making a music app and we want to make it beautiful, we will need some folders: 🤔
 * Images
 * Music
 At last be ready with your favorite songs and their album cover images.   :wink:
 
 **Initial Setup**
-For the beginning of this workshop lets set up our IDE (Integrated Development Environment), for this I am going to use Rept.it. 
-To start your coding right away click [here](https://repl.it/languages/html) and you will have your whole setup. 
+Let's start by setting up our IDE (Integrated Development Environment) in Rept.it, a free, online code editor. 
 
- You would see that there are already three folders named HTML, CSS and JavaScript.  
+To start your coding right away navigate to [repl.it/languages/html](https://repl.it/languages/html) and you will have your whole setup. 
+
+You would see that there are already three files named HTML, CSS and JavaScript.  
 
 Now create the required folders of ***images*** and ***music***.
 
@@ -73,7 +74,7 @@ To do that you can simple link in the head of HTML file by putting
 ```
 
 In the HTML file everything is wrapped inside one another. 
-There are various classes and ids which has the small chunks of the elements to be displayed.
+There are various `classes` and `id`s which has the small chunks of the elements to be displayed.
 Put up some dummy data to form the layout of the app.
 For example:
 
@@ -146,9 +147,12 @@ const song_title_el = document.querySelector('#song-title');
 
 ```
 Like this way it will easier to point out which element we want to work with.
+
 Add two variables, name them relevant as to store the next and previous songs.
+
 #### Creating data base for the app:
 Remember in the beginning we created two folders named images and music? Well it is time that you put your images and songs in their respective folders. Make sure you name them numerically so that it will be easy to point them from the JavaScript.
+
 To create the database, make an object of various properties of your songs and these properties will include:
 * Name of the song
 * Name of the artist/band
@@ -175,7 +179,7 @@ Like this way we can access the properties very easily by simply referring to th
 
 #### Adding events and event-listeners
  Next part is to make the app understand when to do the things. Like if someone clicks on play button then what to do?
- All these are done with the help of calling functions when there is an event. Which can be triggered by event-listeners.
+ All these are done with the help of calling functions when there is an event. Which can be triggered by **event-listeners**.
  For example:
  ```play_btn.addEventListener('click', TogglePlaySong);```
  In the above code when there will be an event with the ```play_btn``` it will call the ```TogglePlaySong``` function.
@@ -194,12 +198,14 @@ Glimpse of the code :wink:
 
 
 #### Defining the functions
-Now that the database is ready and event-listeners are set, it is time to define the functions. 
+Now that the database is ready and **event-listeners** are set, it is time to define the functions. 
+
 The functions will help to:
 * When to play and pause
 * Which song to play next 
 
 In this app I have used four functions to carry out the above functionalities.
+
 <1> The first function is to play the song. Here the index of current song plus the next song will be collected and the ```UpdatePlayer```function will be called.
 
 ```javascript
@@ -222,7 +228,7 @@ if (current_song_index > songs.length - 1) {
 	next_song_index = current_song_index+1;
 		
 ```
-In the above code you can see that there is conditions which states that just in case where the index of the list exceed the length of the number of songs then go back to index 0. Which means it will stay in a loop.
+In the above code you can see that there is conditions which states that just in case where the `index` of the list exceed the length of the number of songs then go back to `index` 0. Which means it will stay in a loop.
 Work on it and perform the basic idea to keep the music app in loops.
 
 Glimpse of the code:wink:
@@ -257,6 +263,7 @@ function ChangeSong (next = true) {
 ```
 
 <3> The third function will help to toggle between the play and pause button. This will make sure to change the button when the music plays or stops. This will be done by adding and removing class fro the HTML file with the help of JavaScript. 
+
 To add and remove class we can simple use ```element_name.classList.add('name_of_class')``` and ```element_name.classList.remove('name_of_class')```respectively.
 
 One more thing about this is that, we have to write the code in a vice-versa condition. Which means that if there is a play button then on click it will change to pause button and if it is a pause button, on click it will change to play button.
